@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="macos2" id="1Xt-HY-uBw">
+                            <menuItem title="Chess" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="macos2" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Chess" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About macos2" id="5kV-Vb-QxS">
+                                        <menuItem title="About Chess" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide macos2" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Chess" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -46,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit macos2" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Chess" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -659,7 +661,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="macos2 Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="chess Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="chess" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +705,850 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="chess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" appearanceType="aqua" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="417" height="401"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="INv-nv-7sm">
+                                <rect key="frame" x="43" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UG4-YZ-fe2">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F9:" target="XfG-lQ-9wD" id="0ro-ri-72V"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="xcQ-m7-76p">
+                                <rect key="frame" x="3" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kt0-pb-jUn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F8:" target="XfG-lQ-9wD" id="4l9-be-gtx"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="71y-F2-k0v">
+                                <rect key="frame" x="83" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p00-dI-5wQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F10:" target="XfG-lQ-9wD" id="aih-9V-fQ1"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="p0t-Zq-i7l">
+                                <rect key="frame" x="123" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zYi-az-CSD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F11:" target="XfG-lQ-9wD" id="uc4-h5-pA2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="mcL-0o-4V1">
+                                <rect key="frame" x="163" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1so-HL-mlm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F12:" target="XfG-lQ-9wD" id="VJV-Fq-CU2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="vm7-Me-yuZ">
+                                <rect key="frame" x="203" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lqB-rS-99Y">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F13:" target="XfG-lQ-9wD" id="D2M-Cd-4Hl"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="F3c-i8-UB5">
+                                <rect key="frame" x="243" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lob-YQ-bfq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F14:" target="XfG-lQ-9wD" id="0YQ-ky-KiO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-IX-RoZ">
+                                <rect key="frame" x="283" y="270" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="O" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YK8-dr-L7r">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F15:" target="XfG-lQ-9wD" id="Idu-zm-Zki"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="LYd-5c-VBW">
+                                <rect key="frame" x="3" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UjW-z5-dCP">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F40:" target="XfG-lQ-9wD" id="lTf-aH-jp2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="47" translatesAutoresizingMaskIntoConstraints="NO" id="coQ-q6-m5E">
+                                <rect key="frame" x="283" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gNW-yi-sWi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F47:" target="XfG-lQ-9wD" id="KSb-OU-scs"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="41" translatesAutoresizingMaskIntoConstraints="NO" id="tIN-a3-Bow">
+                                <rect key="frame" x="43" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AX8-1e-TTD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F41:" target="XfG-lQ-9wD" id="4X2-bW-RAF"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="46" translatesAutoresizingMaskIntoConstraints="NO" id="vmN-o5-Ok4">
+                                <rect key="frame" x="243" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="w84-rS-Mpn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F46:" target="XfG-lQ-9wD" id="BmK-HP-YJN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="42" translatesAutoresizingMaskIntoConstraints="NO" id="erc-JN-fN8">
+                                <rect key="frame" x="83" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2b8-DE-JRy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F42:" target="XfG-lQ-9wD" id="QPn-Bv-90O"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="45" translatesAutoresizingMaskIntoConstraints="NO" id="vWE-tV-z3b">
+                                <rect key="frame" x="203" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sVG-PK-7Ve">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F45:" target="XfG-lQ-9wD" id="jUK-u2-tPu"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="43" translatesAutoresizingMaskIntoConstraints="NO" id="ahG-PS-iiO">
+                                <rect key="frame" x="123" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4d1-TH-JOq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F43:" target="XfG-lQ-9wD" id="dzA-sq-Etb"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="44" translatesAutoresizingMaskIntoConstraints="NO" id="HIg-Cx-djH">
+                                <rect key="frame" x="163" y="98" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Nse-jJ-kJB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F44:" target="XfG-lQ-9wD" id="LAz-y6-SNm"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="32" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-J7-JRe">
+                                <rect key="frame" x="3" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pB6-0T-EaW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F32:" target="XfG-lQ-9wD" id="2Ge-Kh-0Db"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="39" translatesAutoresizingMaskIntoConstraints="NO" id="j4L-KJ-7gV">
+                                <rect key="frame" x="283" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r17-zI-BZF">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F39:" target="XfG-lQ-9wD" id="WsP-IK-RJe"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="33" translatesAutoresizingMaskIntoConstraints="NO" id="KIF-N3-Tlx">
+                                <rect key="frame" x="43" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pna-vA-4Pv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F33:" target="XfG-lQ-9wD" id="NUI-gU-zXw"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="38" translatesAutoresizingMaskIntoConstraints="NO" id="6Fr-7i-RHH">
+                                <rect key="frame" x="243" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rxe-gk-bZz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F38:" target="XfG-lQ-9wD" id="BxE-Ek-T1B"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="34" translatesAutoresizingMaskIntoConstraints="NO" id="xK8-Pe-Vl7">
+                                <rect key="frame" x="83" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZTr-O4-BfV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F34:" target="XfG-lQ-9wD" id="qeB-mw-SPT"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="37" translatesAutoresizingMaskIntoConstraints="NO" id="7ZV-ed-IfI">
+                                <rect key="frame" x="203" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ODE-NC-P9c">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F37:" target="XfG-lQ-9wD" id="d1u-4q-87U"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="35" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-qs-bIo">
+                                <rect key="frame" x="123" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ffw-1V-VVZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F35:" target="XfG-lQ-9wD" id="qlM-PQ-vSr"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="36" translatesAutoresizingMaskIntoConstraints="NO" id="5jE-I8-5UV">
+                                <rect key="frame" x="163" y="141" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1rC-Of-Hgw">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F36:" target="XfG-lQ-9wD" id="Dng-Qx-Gsa"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="24" translatesAutoresizingMaskIntoConstraints="NO" id="P9y-iJ-IYH">
+                                <rect key="frame" x="3" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="awU-rh-dkS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F24:" target="XfG-lQ-9wD" id="UwD-g8-pH9"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="31" translatesAutoresizingMaskIntoConstraints="NO" id="dHP-jR-JqX">
+                                <rect key="frame" x="283" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eLB-Wk-NHT">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F31:" target="XfG-lQ-9wD" id="jyG-kW-UaL"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="30" translatesAutoresizingMaskIntoConstraints="NO" id="v0H-1s-DUz">
+                                <rect key="frame" x="243" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bHC-rE-NL0">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F30:" target="XfG-lQ-9wD" id="RkF-m4-SV2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="26" translatesAutoresizingMaskIntoConstraints="NO" id="CnE-U9-DF8">
+                                <rect key="frame" x="83" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1qg-8T-Ynv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F26:" target="XfG-lQ-9wD" id="KR5-2T-bYY"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="29" translatesAutoresizingMaskIntoConstraints="NO" id="BZ0-m1-8wv">
+                                <rect key="frame" x="203" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="TnW-cv-COK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F29:" target="XfG-lQ-9wD" id="RMo-OB-HQG"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="27" translatesAutoresizingMaskIntoConstraints="NO" id="8IN-mL-i9h">
+                                <rect key="frame" x="123" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RDR-l5-CTZ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F27:" target="XfG-lQ-9wD" id="hG7-LV-eeJ"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="28" translatesAutoresizingMaskIntoConstraints="NO" id="epl-XO-paj">
+                                <rect key="frame" x="163" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qOx-Jj-0cD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F28:" target="XfG-lQ-9wD" id="6or-pV-Dfy"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="eTx-s8-Tll">
+                                <rect key="frame" x="3" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r4S-AT-B1M">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F16:" target="XfG-lQ-9wD" id="Fbj-zN-PXv"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="23" translatesAutoresizingMaskIntoConstraints="NO" id="xkv-Ka-SWU">
+                                <rect key="frame" x="283" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eg5-lH-OvY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F23:" target="XfG-lQ-9wD" id="OMj-Tm-IEd"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="17" translatesAutoresizingMaskIntoConstraints="NO" id="3IM-am-E2V">
+                                <rect key="frame" x="43" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4gI-Fq-tBH">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F17:" target="XfG-lQ-9wD" id="LwB-ev-3N1"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="22" translatesAutoresizingMaskIntoConstraints="NO" id="1ej-mh-oat">
+                                <rect key="frame" x="243" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wD6-IE-f1s">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F22:" target="XfG-lQ-9wD" id="xaS-Vi-HU1"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="18" translatesAutoresizingMaskIntoConstraints="NO" id="oiW-vn-xFg">
+                                <rect key="frame" x="83" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Kmy-ey-mUr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F18:" target="XfG-lQ-9wD" id="zww-6R-zX6"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="21" translatesAutoresizingMaskIntoConstraints="NO" id="Shu-gb-6QE">
+                                <rect key="frame" x="203" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EfF-Nw-dZk">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F21:" target="XfG-lQ-9wD" id="whb-xQ-dsN"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="19" translatesAutoresizingMaskIntoConstraints="NO" id="8px-FD-cV0">
+                                <rect key="frame" x="123" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mtw-RD-90s">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F19:" target="XfG-lQ-9wD" id="iNY-1U-0Wn"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="Eci-91-XD5">
+                                <rect key="frame" x="163" y="227" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7Ms-w6-H2e">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F20:" target="XfG-lQ-9wD" id="SUZ-nm-E9S"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="48" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-L6-O8p">
+                                <rect key="frame" x="3" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="a9M-Ko-vHa">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F48:" target="XfG-lQ-9wD" id="f0L-sz-er5"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="56" translatesAutoresizingMaskIntoConstraints="NO" id="NMu-LK-7tM">
+                                <rect key="frame" x="3" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="R" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bro-7z-a4d">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F56:" target="XfG-lQ-9wD" id="5DH-n5-nhR"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="57" translatesAutoresizingMaskIntoConstraints="NO" id="osS-nQ-DK1">
+                                <rect key="frame" x="43" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="N" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="h9g-31-tQr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F57:" target="XfG-lQ-9wD" id="mKO-PJ-tlX"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="58" translatesAutoresizingMaskIntoConstraints="NO" id="0dw-2Q-ldN">
+                                <rect key="frame" x="83" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="B" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kcI-fV-W6t">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F58:" target="XfG-lQ-9wD" id="c4G-XJ-zha"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="59" translatesAutoresizingMaskIntoConstraints="NO" id="hde-e8-yos">
+                                <rect key="frame" x="123" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="Q" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y16-L1-QVe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F59:" target="XfG-lQ-9wD" id="C5L-bu-4km"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="60" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-67-9Zx">
+                                <rect key="frame" x="163" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="K" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8ke-IN-oqh">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F60:" target="XfG-lQ-9wD" id="Zia-zq-kzO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="61" translatesAutoresizingMaskIntoConstraints="NO" id="EKJ-uF-9Ez">
+                                <rect key="frame" x="203" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="B" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BLT-Iw-UsW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F61:" target="XfG-lQ-9wD" id="EJw-lq-361"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="62" translatesAutoresizingMaskIntoConstraints="NO" id="cDx-MX-zbV">
+                                <rect key="frame" x="243" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="N" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CaF-NQ-VRV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F62:" target="XfG-lQ-9wD" id="FJv-OC-MV4"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="63" translatesAutoresizingMaskIntoConstraints="NO" id="hlh-cW-0Yy">
+                                <rect key="frame" x="283" y="12" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="R" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Yh0-JE-Se3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F63:" target="XfG-lQ-9wD" id="gHR-Ec-amy"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="55" translatesAutoresizingMaskIntoConstraints="NO" id="eTf-o5-FJr">
+                                <rect key="frame" x="283" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5EU-oC-Fci">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F55:" target="XfG-lQ-9wD" id="Ts6-ih-4xa"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="49" translatesAutoresizingMaskIntoConstraints="NO" id="Bvl-3B-yCM">
+                                <rect key="frame" x="43" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1SN-f9-8tz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F49:" target="XfG-lQ-9wD" id="674-2V-kAg"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="54" translatesAutoresizingMaskIntoConstraints="NO" id="r1k-uK-pup">
+                                <rect key="frame" x="243" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Coy-af-Ddy">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F54:" target="XfG-lQ-9wD" id="AD3-5m-Ka4"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="50" translatesAutoresizingMaskIntoConstraints="NO" id="lcE-Gd-KTz">
+                                <rect key="frame" x="83" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ktu-b3-Wfu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F50:" target="XfG-lQ-9wD" id="vyF-aH-Vfq"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="53" translatesAutoresizingMaskIntoConstraints="NO" id="vYm-pv-bPf">
+                                <rect key="frame" x="203" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iph-PI-XuS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F53:" target="XfG-lQ-9wD" id="Dec-sv-Xa1"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="51" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-cK-pDK">
+                                <rect key="frame" x="123" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y9A-nh-zws">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F51:" target="XfG-lQ-9wD" id="K12-Q4-RW1"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="52" translatesAutoresizingMaskIntoConstraints="NO" id="7aU-4S-Bhh">
+                                <rect key="frame" x="163" y="55" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="P" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iLg-ZS-qcS">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F52:" target="XfG-lQ-9wD" id="cTR-DR-3UB"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7f-Gm-7Dw">
+                                <rect key="frame" x="3" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="T" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AvB-qY-hwU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F0:" target="XfG-lQ-9wD" id="0wq-36-Btz"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="jyd-Wh-Lot">
+                                <rect key="frame" x="283" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="T" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DI2-Q6-Q8w">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F7:" target="XfG-lQ-9wD" id="JnX-Iy-l75"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="XZW-jT-eYC">
+                                <rect key="frame" x="43" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="M" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5z1-m0-J1U">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F1:" target="XfG-lQ-9wD" id="lZE-sC-2Q9"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="Raq-p1-hfl">
+                                <rect key="frame" x="243" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="M" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wvi-gq-daK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F6:" target="XfG-lQ-9wD" id="jRw-UY-0Ea"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="c6f-US-FlX">
+                                <rect key="frame" x="83" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="V" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xUu-Tp-k3f">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F2:" target="XfG-lQ-9wD" id="Z4P-xc-B3P"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="WDX-zO-QYh">
+                                <rect key="frame" x="203" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="V" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gCg-a5-rLx">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F5:" target="XfG-lQ-9wD" id="VuG-Hp-OG2"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="0qZ-Yk-QiE">
+                                <rect key="frame" x="123" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="W" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DbE-r0-m0f">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F3:" target="XfG-lQ-9wD" id="D3R-QR-XNs"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="NHJ-dZ-xAi">
+                                <rect key="frame" x="163" y="313" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="L" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wkI-0m-T6U">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F4:" target="XfG-lQ-9wD" id="DzV-2v-Kba"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" tag="25" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-aI-Id4">
+                                <rect key="frame" x="43" y="184" width="43" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="bevel" title="7" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gpL-IZ-Cdz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="F25:" target="XfG-lQ-9wD" id="F7u-ig-cka"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDo-ip-xRY">
+                                <rect key="frame" x="3" y="385" width="91" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Nächster Zug:" placeholderString="Nächster Zug:" id="0R4-wz-CRa">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bTj-ck-2yj">
+                                <rect key="frame" x="101" y="380" width="25" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" title="P" id="pEY-oo-wl4">
+                                    <font key="font" size="21" name="ChessAdventurer"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qoc-U8-U4B">
+                                <rect key="frame" x="3" y="361" width="323" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="oAT-q2-lUq">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daB-3q-gMm">
+                                <rect key="frame" x="154" y="382" width="150" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Schwarz = Computer" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ctp-6Q-UgC">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="computerPlayer:" target="XfG-lQ-9wD" id="ehU-QR-fqf"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SU0-4v-3n9">
+                                <rect key="frame" x="345" y="373" width="42" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="↩︎" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z1b-Ss-d6O">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Revers:" target="XfG-lQ-9wD" id="ar0-Nh-3zT"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-Gf-rCl">
+                                <rect key="frame" x="387" y="380" width="27" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="1" id="ikM-UE-vwU">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="F0" destination="a7f-Gm-7Dw" id="5Qf-NL-Kqx"/>
+                        <outlet property="F1" destination="XZW-jT-eYC" id="cdm-Xp-CaU"/>
+                        <outlet property="F10" destination="71y-F2-k0v" id="6oM-qr-SCV"/>
+                        <outlet property="F11" destination="p0t-Zq-i7l" id="Uab-UR-ht8"/>
+                        <outlet property="F12" destination="mcL-0o-4V1" id="fhO-fd-Wwl"/>
+                        <outlet property="F13" destination="vm7-Me-yuZ" id="c20-Dh-Ud0"/>
+                        <outlet property="F14" destination="F3c-i8-UB5" id="Ogq-k4-PWJ"/>
+                        <outlet property="F15" destination="hwI-IX-RoZ" id="Xl2-SE-iM2"/>
+                        <outlet property="F16" destination="eTx-s8-Tll" id="VaH-rH-HGw"/>
+                        <outlet property="F17" destination="3IM-am-E2V" id="HL4-R9-bMY"/>
+                        <outlet property="F18" destination="oiW-vn-xFg" id="nyp-SF-vQ2"/>
+                        <outlet property="F19" destination="8px-FD-cV0" id="H7t-7X-0mv"/>
+                        <outlet property="F2" destination="c6f-US-FlX" id="lAC-qC-GCU"/>
+                        <outlet property="F20" destination="Eci-91-XD5" id="gtt-BM-h0S"/>
+                        <outlet property="F21" destination="Shu-gb-6QE" id="xKy-cp-Whm"/>
+                        <outlet property="F22" destination="1ej-mh-oat" id="NEx-cd-TTp"/>
+                        <outlet property="F23" destination="xkv-Ka-SWU" id="S8H-og-eVd"/>
+                        <outlet property="F24" destination="P9y-iJ-IYH" id="2Gy-Bc-i7Q"/>
+                        <outlet property="F25" destination="Rg6-aI-Id4" id="m7U-LQ-fXX"/>
+                        <outlet property="F26" destination="CnE-U9-DF8" id="BjJ-tm-XrS"/>
+                        <outlet property="F27" destination="8IN-mL-i9h" id="KkG-Ms-TjC"/>
+                        <outlet property="F28" destination="epl-XO-paj" id="aw3-vF-h1g"/>
+                        <outlet property="F29" destination="BZ0-m1-8wv" id="7Ql-ft-w3i"/>
+                        <outlet property="F3" destination="0qZ-Yk-QiE" id="ozM-BG-U3M"/>
+                        <outlet property="F30" destination="v0H-1s-DUz" id="Ffe-ea-cnt"/>
+                        <outlet property="F31" destination="dHP-jR-JqX" id="iRN-Or-8lU"/>
+                        <outlet property="F32" destination="vKJ-J7-JRe" id="vWZ-64-ebK"/>
+                        <outlet property="F33" destination="KIF-N3-Tlx" id="L60-rJ-ufN"/>
+                        <outlet property="F34" destination="xK8-Pe-Vl7" id="Hkh-n2-jnI"/>
+                        <outlet property="F35" destination="D8l-qs-bIo" id="9t3-7N-xN2"/>
+                        <outlet property="F36" destination="5jE-I8-5UV" id="Osa-zj-NjB"/>
+                        <outlet property="F37" destination="7ZV-ed-IfI" id="NYK-eL-jRy"/>
+                        <outlet property="F38" destination="6Fr-7i-RHH" id="ksy-se-il6"/>
+                        <outlet property="F39" destination="j4L-KJ-7gV" id="MpQ-SI-pHK"/>
+                        <outlet property="F4" destination="NHJ-dZ-xAi" id="UnI-V2-Rcx"/>
+                        <outlet property="F40" destination="LYd-5c-VBW" id="aMc-Ir-G9r"/>
+                        <outlet property="F41" destination="tIN-a3-Bow" id="kUU-AR-xWL"/>
+                        <outlet property="F42" destination="erc-JN-fN8" id="Exu-WL-FSq"/>
+                        <outlet property="F43" destination="ahG-PS-iiO" id="UpI-hn-bfG"/>
+                        <outlet property="F44" destination="HIg-Cx-djH" id="CLL-se-bAh"/>
+                        <outlet property="F45" destination="vWE-tV-z3b" id="owO-3z-dRV"/>
+                        <outlet property="F46" destination="vmN-o5-Ok4" id="TZI-2f-JmK"/>
+                        <outlet property="F47" destination="coQ-q6-m5E" id="AFR-yf-kDS"/>
+                        <outlet property="F48" destination="HLT-L6-O8p" id="NuP-1S-M44"/>
+                        <outlet property="F49" destination="Bvl-3B-yCM" id="o2a-VS-stL"/>
+                        <outlet property="F5" destination="WDX-zO-QYh" id="2jq-ju-3AE"/>
+                        <outlet property="F50" destination="lcE-Gd-KTz" id="yCB-Es-WQ1"/>
+                        <outlet property="F51" destination="iKE-cK-pDK" id="Iej-NQ-LN7"/>
+                        <outlet property="F52" destination="7aU-4S-Bhh" id="VOu-SI-R2T"/>
+                        <outlet property="F53" destination="vYm-pv-bPf" id="4tg-I8-tDe"/>
+                        <outlet property="F54" destination="r1k-uK-pup" id="I42-1w-anJ"/>
+                        <outlet property="F55" destination="eTf-o5-FJr" id="1BW-LV-QqW"/>
+                        <outlet property="F56" destination="NMu-LK-7tM" id="Omu-Ch-QBg"/>
+                        <outlet property="F57" destination="osS-nQ-DK1" id="h1q-Ll-sI0"/>
+                        <outlet property="F58" destination="0dw-2Q-ldN" id="374-eN-E45"/>
+                        <outlet property="F59" destination="hde-e8-yos" id="DUO-6D-nZy"/>
+                        <outlet property="F6" destination="Raq-p1-hfl" id="FMj-G1-zL6"/>
+                        <outlet property="F60" destination="eLv-67-9Zx" id="Kld-8i-7w9"/>
+                        <outlet property="F61" destination="EKJ-uF-9Ez" id="yss-Wm-LX6"/>
+                        <outlet property="F62" destination="cDx-MX-zbV" id="g2F-Xg-1Ii"/>
+                        <outlet property="F63" destination="hlh-cW-0Yy" id="1EV-oc-f26"/>
+                        <outlet property="F7" destination="jyd-Wh-Lot" id="iQy-th-49n"/>
+                        <outlet property="F8" destination="xcQ-m7-76p" id="HUm-Pr-eBh"/>
+                        <outlet property="F9" destination="INv-nv-7sm" id="Grt-pM-jwO"/>
+                        <outlet property="Revers" destination="SU0-4v-3n9" id="HIj-7O-O6K"/>
+                        <outlet property="computerPlayer" destination="daB-3q-gMm" id="lXg-JS-fcJ"/>
+                        <outlet property="currentMove" destination="tdG-Gf-rCl" id="Ylu-c3-C2Z"/>
+                        <outlet property="help" destination="qoc-U8-U4B" id="PzD-Yr-EWD"/>
+                        <outlet property="nextmovefigure" destination="bTj-ck-2yj" id="tMk-o4-feG"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="91.5" y="720.5"/>
         </scene>
     </scenes>
 </document>

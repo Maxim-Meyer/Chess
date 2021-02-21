@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,17 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B62631C2597AB19003E4AEA /* macos2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macos2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B62631C2597AB19003E4AEA /* chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B62631F2597AB19003E4AEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B6263212597AB19003E4AEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B6263232597AB19003E4AEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B6263262597AB19003E4AEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B6263282597AB19003E4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B6263292597AB19003E4AEA /* macos2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macos2.entitlements; sourceTree = "<group>"; };
-		6B62632E2597AB1A003E4AEA /* macos2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macos2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B62632E2597AB1A003E4AEA /* chessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6263322597AB1A003E4AEA /* macos2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macos2Tests.swift; sourceTree = "<group>"; };
 		6B6263342597AB1A003E4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B6263392597AB1A003E4AEA /* macos2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macos2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B6263392597AB1A003E4AEA /* chessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B62633D2597AB1A003E4AEA /* macos2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macos2UITests.swift; sourceTree = "<group>"; };
 		6B62633F2597AB1A003E4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,9 +86,9 @@
 		6B62631D2597AB19003E4AEA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6B62631C2597AB19003E4AEA /* macos2.app */,
-				6B62632E2597AB1A003E4AEA /* macos2Tests.xctest */,
-				6B6263392597AB1A003E4AEA /* macos2UITests.xctest */,
+				6B62631C2597AB19003E4AEA /* chess.app */,
+				6B62632E2597AB1A003E4AEA /* chessTests.xctest */,
+				6B6263392597AB1A003E4AEA /* chessUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6B62631B2597AB18003E4AEA /* macos2 */ = {
+		6B62631B2597AB18003E4AEA /* chess */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B6263422597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2" */;
+			buildConfigurationList = 6B6263422597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chess" */;
 			buildPhases = (
 				6B6263182597AB18003E4AEA /* Sources */,
 				6B6263192597AB18003E4AEA /* Frameworks */,
@@ -139,14 +139,14 @@
 			);
 			dependencies = (
 			);
-			name = macos2;
+			name = chess;
 			productName = macos2;
-			productReference = 6B62631C2597AB19003E4AEA /* macos2.app */;
+			productReference = 6B62631C2597AB19003E4AEA /* chess.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6B62632D2597AB1A003E4AEA /* macos2Tests */ = {
+		6B62632D2597AB1A003E4AEA /* chessTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B6263452597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2Tests" */;
+			buildConfigurationList = 6B6263452597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chessTests" */;
 			buildPhases = (
 				6B62632A2597AB1A003E4AEA /* Sources */,
 				6B62632B2597AB1A003E4AEA /* Frameworks */,
@@ -157,14 +157,14 @@
 			dependencies = (
 				6B6263302597AB1A003E4AEA /* PBXTargetDependency */,
 			);
-			name = macos2Tests;
+			name = chessTests;
 			productName = macos2Tests;
-			productReference = 6B62632E2597AB1A003E4AEA /* macos2Tests.xctest */;
+			productReference = 6B62632E2597AB1A003E4AEA /* chessTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6B6263382597AB1A003E4AEA /* macos2UITests */ = {
+		6B6263382597AB1A003E4AEA /* chessUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6B6263482597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2UITests" */;
+			buildConfigurationList = 6B6263482597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chessUITests" */;
 			buildPhases = (
 				6B6263352597AB1A003E4AEA /* Sources */,
 				6B6263362597AB1A003E4AEA /* Frameworks */,
@@ -175,9 +175,9 @@
 			dependencies = (
 				6B62633B2597AB1A003E4AEA /* PBXTargetDependency */,
 			);
-			name = macos2UITests;
+			name = chessUITests;
 			productName = macos2UITests;
-			productReference = 6B6263392597AB1A003E4AEA /* macos2UITests.xctest */;
+			productReference = 6B6263392597AB1A003E4AEA /* chessUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -202,8 +202,8 @@
 					};
 				};
 			};
-			buildConfigurationList = 6B6263172597AB18003E4AEA /* Build configuration list for PBXProject "macos2" */;
-			compatibilityVersion = "Xcode 9.3";
+			buildConfigurationList = 6B6263172597AB18003E4AEA /* Build configuration list for PBXProject "chess" */;
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -215,9 +215,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6B62631B2597AB18003E4AEA /* macos2 */,
-				6B62632D2597AB1A003E4AEA /* macos2Tests */,
-				6B6263382597AB1A003E4AEA /* macos2UITests */,
+				6B62631B2597AB18003E4AEA /* chess */,
+				6B62632D2597AB1A003E4AEA /* chessTests */,
+				6B6263382597AB1A003E4AEA /* chessUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -279,12 +279,12 @@
 /* Begin PBXTargetDependency section */
 		6B6263302597AB1A003E4AEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6B62631B2597AB18003E4AEA /* macos2 */;
+			target = 6B62631B2597AB18003E4AEA /* chess */;
 			targetProxy = 6B62632F2597AB1A003E4AEA /* PBXContainerItemProxy */;
 		};
 		6B62633B2597AB1A003E4AEA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6B62631B2597AB18003E4AEA /* macos2 */;
+			target = 6B62631B2597AB18003E4AEA /* chess */;
 			targetProxy = 6B62633A2597AB1A003E4AEA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -421,9 +421,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CODE_SIGN_ENTITLEMENTS = macos2/macos2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UTC9S7V767;
 				INFOPLIST_FILE = macos2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,12 +440,18 @@
 		6B6263442597AB1A003E4AEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"ALTERNATE_GROUP[sdk=*]" = "$(INSTALL_GROUP)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				"BUILD_VARIANTS[sdk=*]" = normal;
 				CODE_SIGN_ENTITLEMENTS = macos2/macos2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = UTC9S7V767;
 				INFOPLIST_FILE = macos2/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+				"INSTALL_PATH[sdk=macosx*]" = "$(LOCAL_APPS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -471,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Maxim.Meyer.macos2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macos2.app/Contents/MacOS/macos2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chess.app/Contents/MacOS/chess";
 			};
 			name = Debug;
 		};
@@ -492,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Maxim.Meyer.macos2Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/macos2.app/Contents/MacOS/macos2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/chess.app/Contents/MacOS/chess";
 			};
 			name = Release;
 		};
@@ -537,7 +545,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6B6263172597AB18003E4AEA /* Build configuration list for PBXProject "macos2" */ = {
+		6B6263172597AB18003E4AEA /* Build configuration list for PBXProject "chess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B6263402597AB1A003E4AEA /* Debug */,
@@ -546,7 +554,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B6263422597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2" */ = {
+		6B6263422597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chess" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B6263432597AB1A003E4AEA /* Debug */,
@@ -555,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B6263452597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2Tests" */ = {
+		6B6263452597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chessTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B6263462597AB1A003E4AEA /* Debug */,
@@ -564,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6B6263482597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "macos2UITests" */ = {
+		6B6263482597AB1A003E4AEA /* Build configuration list for PBXNativeTarget "chessUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6B6263492597AB1A003E4AEA /* Debug */,
